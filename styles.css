@@ -1,0 +1,221 @@
+       body {
+  margin-top: 13.5rem;
+  
+  color: #999;
+  font: 400 16px/1.5 "exo", "ubuntu", "segoe ui", "helvetica", "arial", sans-serif;
+  text-align: center;
+  
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  
+  /* Animations */
+  -webkit-animation: bg-scrolling-reverse .92s infinite; /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse .92s infinite; /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse .92s infinite; /* Opera 12+ */
+  animation: bg-scrolling-reverse .92s infinite; /* IE 10+ */
+  
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  margin-bottom: 0;
+}      
+        header, main, footer, body {
+         margin: 0;
+         padding: 0;
+        }
+        
+        /* Efecto de texto */  
+        .titulo {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: dodgerblue;
+            transition: color 0.3s;
+        }
+
+        .titulo:hover {
+            color: #000000;
+        }
+
+        .galeria {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas nuevas */
+            gap: 30px;
+            margin: 30px;
+        }
+        /* Efecto de imagenes */
+        .imagenes img, .column img {
+            width: 200px;
+            max-width: 200px; /* Limita el ancho máximo */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: cover;
+            padding: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+        @media (max-width: 768px) {
+    .imagenes, .column {
+        flex: 1 1 45%; /* Cada imagen ocupará un 45% del contenedor en pantallas medianas */
+      }
+      }
+
+      @media (max-width: 480px) {
+      .imagenes, .column {
+        flex: 1 1 100%; /* Cada imagen ocupará el 100% del contenedor en pantallas pequeñas */
+    }
+}
+        .imagenes img:hover, .column img:hover {
+            transform: scale(1.05);
+        }
+        .imagenes h2, .column h2 {
+            --s: 0.1em;   /* the thickness of the line */
+            --c: #2c4bff; /* the color */
+  
+            color: rgb(8, 134, 156);
+            padding-bottom: var(--s);
+           background: 
+           linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+           linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+           -webkit-background-clip: text,padding-box;
+           background-clip: text,padding-box;
+           transition: 0.5s;
+           text-align: center;
+           
+        }
+        .imagenes h2:hover, .column h2:hover {
+            --_p: 100%
+        }
+        .imagenes p, .column p {
+            text-align: center;
+        }
+         /* transform: scale(1.05); */
+        
+        
+        
+         /* Boton externo a una pagina */
+         
+         #content {
+            position: relative;
+         }
+         .ribbon {
+            position: absolute;
+            top: -167px;
+            right: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añadido para animar el hover */
+         }
+         .ribbon:hover {
+            transform: scale(1.1); /* Aumenta el tamaño del botón en un 10% al pasar el mouse */
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
+        }
+         
+ /* Estilos para las pestañas */
+ .tab {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: background-color 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+         /* Estilos para las pestañas */
+
+         /* Perfil hoja de vida */
+         .perfil {
+            margin: 20px;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .perfil img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .perfil h2 {
+            color: yellow;
+            margin-top: 10px;
+        }
+
+        .perfil p {
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        .seccion {
+            margin: 20px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .seccion h3 {
+            color: #2c4bff;
+            margin-bottom: 10px;
+        }
+
+        .seccion ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .seccion ul li {
+            margin: 5px 0;
+            text-align: left;
+            color: #ccc;
+        }
+        /*Perfil hoja de vida*/
+
+        /*  Background SCSS */ 
+        @-webkit-keyframes bg-scrolling-reverse {
+        100% { background-position: 50px 50px; }
+        }
+        @-moz-keyframes bg-scrolling-reverse {
+        100% { background-position: 50px 50px; }
+        }
+        @-o-keyframes bg-scrolling-reverse {
+        100% { background-position: 50px 50px; }
+        }
+        @keyframes bg-scrolling-reverse {
+        100% { background-position: 50px 50px; }
+        }
+
+        @-webkit-keyframes bg-scrolling {
+        0% { background-position: 50px 50px; }
+        }
+        @-moz-keyframes bg-scrolling {
+        0% { background-position: 50px 50px; }
+        }
+        @-o-keyframes bg-scrolling {
+        0% { background-position: 50px 50px; }
+        }
+        @keyframes bg-scrolling {
+        0% { background-position: 50px 50px; }
+        }
+   

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avión de Papel Interactivo</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #e0f7fa;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            cursor: none; /* Oculta el cursor para dar la ilusión de que el avión es el cursor */
+        }
+
+        .avion {
+            position: fixed; /* Cambiado a fixed para que se mueva en relación con la ventana */
+            width: 100px;
+            height: 100px;
+            background-image: url('https://www.svgrepo.com/show/171040/paper-plane-handmade-folded-shape.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none; /* Hace el avión intangible para el cursor */
+            transition: transform 0.05s linear; /* Velocidad de la transición */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="avion"></div>
+
+    <script>
+        const avion = document.querySelector('.avion');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX - avion.clientWidth / 2;
+            const y = e.clientY - avion.clientHeight / 2;
+
+            avion.style.transform = `translate(${x}px, ${y}px) rotate(${x / window.innerWidth * 20 - 10}deg)`;
+        });
+    </script>
+</body>
+</html>
+

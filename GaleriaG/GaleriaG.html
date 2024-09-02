@@ -12,10 +12,8 @@
     color: #999;
     font: 400 16px/1.5 "exo", "ubuntu", "segoe ui", "helvetica", "arial", sans-serif;
     text-align: center;
-
     /* Imagen de fondo repetida */
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-
     /* Animaciones de fondo */
     -webkit-animation: bg-scrolling-reverse .92s infinite;
     -moz-animation: bg-scrolling-reverse .92s infinite;
@@ -26,12 +24,10 @@
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
 }
-
 header, main, footer, body {
     margin: 0;
     padding: 0;
 }
-
 /* Estilo de texto de título */
 .titulo {
     text-align: center;
@@ -39,11 +35,9 @@ header, main, footer, body {
     color: dodgerblue;
     transition: color 0.3s;
 }
-
 .titulo:hover {
     color: #000000;
 }
-
 /* Estilo de galería */
 .galeria {
     display: flex;
@@ -52,11 +46,9 @@ header, main, footer, body {
     gap: 30px;
     margin: 30px;
 }
-
 .imagenes, .column {
             position: relative; /* Necesario para posicionar el botón dentro del contenedor */
         }
-
         .imagenes img, .column img {
             width: 200px;
             max-width: 200px;
@@ -65,25 +57,21 @@ header, main, footer, body {
             padding: 5px;
             transition: transform 0.3s ease-in-out;
         }
-
         .imagenes img:hover, .column img:hover {
             transform: scale(1.05);
         }
-
 .viñeta {
     display: none; /* Oculta el efecto de viñeta por defecto */
     background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), transparent);
     padding: 20px;
     color: white; /* Para texto claro sobre fondo oscuro */
 }
-
 .viñeta.show {
             display: block; /* Muestra la viñeta cuando se activa */
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Sombra alrededor */
             border: 2px solid rgba(255, 255, 255, 0.5); /* Borde con resplandor */
             transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out; /* Suaviza la transición */
         }
-
 /* Botón desplegable para activar la viñeta */
 .toggle-btn {
             position: absolute;
@@ -96,66 +84,52 @@ header, main, footer, body {
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         .toggle-btn:hover {
             background-color: rgba(50, 50, 50, 0.7); /* Nuevo color al pasar el mouse */
             transition: background-color 0.3s; /* Suaviza la transición */
         }
-
         /* Estilo del botón cuando se hace clic */
     .toggle-btn:active {
     transform: scale(0.95); /* Hace que el botón se encoja ligeramente al hacer clic */
     background-color: rgba(0, 0, 0, 0.8); /* Cambia el color al hacer clic */
     transition: transform 0.1s, background-color 0.3s; /* Suaviza las animaciones */
 }
-
-
 /* Media Queries para hacer las imágenes responsivas */
 @media (max-width: 768px) {
     .imagenes, .column {
         flex: 1 1 45%; /* Cada imagen ocupará un 45% del contenedor en pantallas medianas */
     }
 }
-
 @media (max-width: 480px) {
     .imagenes, .column {
         flex: 1 1 100%; /* Cada imagen ocupará el 100% del contenedor en pantallas pequeñas */
     }
 }
-
 /* Animaciones de fondo */
 @-webkit-keyframes bg-scrolling-reverse {
     100% { background-position: 50px 50px; }
 }
-
 @-moz-keyframes bg-scrolling-reverse {
     100% { background-position: 50px 50px; }
 }
-
 @-o-keyframes bg-scrolling-reverse {
     100% { background-position: 50px 50px; }
 }
-
 @keyframes bg-scrolling-reverse {
     100% { background-position: 50px 50px; }
 }
-
 @-webkit-keyframes bg-scrolling {
     0% { background-position: 50px 50px; }
 }
-
 @-moz-keyframes bg-scrolling {
     0% { background-position: 50px 50px; }
 }
-
 @-o-keyframes bg-scrolling {
     0% { background-position: 50px 50px; }
 }
-
 @keyframes bg-scrolling {
     0% { background-position: 50px 50px; }
 }
-
     </style>
 </head>
 <body>
@@ -172,7 +146,6 @@ header, main, footer, body {
                     <p>Es la última entrega de la trilogía de Tomb Raider protagonizada por Lara Croft. En este juego, Lara viaja a América Central en busca de una ciudad perdida, enfrentándose a peligros naturales y a una organización secreta. Combina acción, exploración y resolución de puzzles.</p>
                 </div>
             </div>
-    
             <div class="imagenes">
                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddx6gh7-f297b574-ddf4-4b5e-8ef8-893c1fcc224e.png/v1/fit/w_718,h_768/doom_icon_ico_by_momen221_ddx6gh7-375w-2x.png" alt="">
                 <button class="toggle-btn">Info</button>
@@ -181,7 +154,6 @@ header, main, footer, body {
                     <p>Un antiguo mal ha sido liberado del infierno, y solo un marine espacial puede detenerlo. Arma hasta los dientes, el protagonista se adentra en las profundidades del infierno para enfrentar hordas de demonios y desvelar los secretos de una antigua profecía.</p>
                 </div>
             </div>
-    
             <div class="imagenes">
                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddu5l3e-c15014c9-472d-4679-a4d4-58586c633215.png/v1/fit/w_512,h_512/doom_eternal_icon_ico_by_momen221_ddu5l3e-375w-2x.png" alt="">
                 <button class="toggle-btn">Info</button>
@@ -191,7 +163,6 @@ header, main, footer, body {
                 </div>
             </div>
         </div>
-    
         <!-- Segunda fila de imágenes -->
         <div class="galeria"> 
             <div class="column">
@@ -202,7 +173,6 @@ header, main, footer, body {
                     <p>Un nuevo mundo lleno de criaturas gigantescas se ha abierto a la caza. Los cazadores más valientes se adentran en este ecosistema salvaje para enfrentar a bestias colosales y desentrañar los misterios de este antiguo mundo. ¿Qué fuerzas ocultas gobiernan esta tierra y qué secretos guardan sus criaturas más peligrosas?</p>
                 </div>
             </div>
-            
             <div class="column">
                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddu2pad-c4713947-65c5-4644-8271-354baa945140.png/v1/fit/w_512,h_512/resident_evil_3_remake_icon_ico_by_momen221_ddu2pad-375w-2x.png" alt="">
                 <button class="toggle-btn">Info</button>
@@ -211,7 +181,6 @@ header, main, footer, body {
                     <p>Raccoon City está a punto de caer. Jill Valentine, una de las últimas supervivientes, debe escapar de la ciudad infestada de zombis y revelar la verdad detrás del brote del virus T. ¿Qué oscuros experimentos se llevaron a cabo en las sombras de esta ciudad y quién está detrás de esta pesadilla?</p>
                 </div>
             </div>
-            
             <div class="column">
                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/dduhvkf-1880e847-0acd-47bc-b0f7-f51326c7a955.png/v1/fit/w_512,h_512/a_plague_tale__innocence_icon_ico_by_momen221_dduhvkf-375w-2x.png" alt="">
                 <button class="toggle-btn">Info</button>
@@ -221,7 +190,6 @@ header, main, footer, body {
                 </div>
             </div>
         </div>
-    
         <!-- Tercera fila de imágenes -->
         <div class="galeria"> 
             <div class="column">
@@ -232,7 +200,6 @@ header, main, footer, body {
                     <p>Un shinobi deshonrado busca venganza y redimirse. En un Japón feudal plagado de conflictos, deberá enfrentarse a poderosos guerreros y superar desafíos mortales para salvar a su señor. ¿Qué secretos oculta el pasado del shinobi y qué destino le espera en este mundo de sombras?</p>
                 </div>
             </div>
-            
             <div class="column">
                 <img src="https://break7801.github.io/joelpina.github.io/resources/pngwing.com(1).png" alt="">
                 <button class="toggle-btn">Info</button>
@@ -241,7 +208,6 @@ header, main, footer, body {
                     <p>Un insecto caballero desciende a las profundidades de un reino subterráneo en ruinas. Explorando cavernas olvidadas y enfrentándose a criaturas extrañas, descubrirá los secretos de un antiguo imperio y los horrores que acechan en las sombras. ¿Qué fuerzas oscuras gobiernan este reino y qué destino le espera al caballero?</p>
                 </div>
             </div>
-            
             <div class="column">
                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddw9hr8-c34f0957-0d0f-456b-8237-663fdce10822.png/v1/fit/w_722,h_768/ori_and_the_will_of_the_wisps_icon_ico_by_momen221_ddw9hr8-375w-2x.png" alt="">
                 <button class="toggle-btn">Info</button>
@@ -251,7 +217,6 @@ header, main, footer, body {
                 </div>
             </div>
         </div>
-
         <script>
             // Script para mostrar/ocultar la viñeta al hacer clic en el botón
             document.querySelectorAll('.toggle-btn').forEach(button => {

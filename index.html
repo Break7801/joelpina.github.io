@@ -1,179 +1,93 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <title>Galería</title>
+    <!-- Metadatos y enlaces de estilos -->
+    <meta charset="UTF-8">
+    <title>Proyectos</title>
     <link rel="icon" href="https://cdn-icons-png.freepik.com/512/7718/7718808.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <!-- Encabezado de la página -->
     <header>
-        <h1 class="titulo">EL SITIO</h1>
-        <p class="titulo">Galeria de para pruebas de CSS(SCSS) y HTML</p>
+        <a href="#" class="glitch" data-glitch="Proyectos">Proyectos</a>
+        <a href="#" class="glitch" data-glitch="Galería para prácticas con CSS(SCSS) y HTML">Galería para prácticas con CSS(SCSS) y HTML</a>
+    </body>
     </header>
-    
-    <!-- Botenes y apartados -->
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Tab1')">Hoja de Vida</button>
-        <button class="tablinks" onclick="openTab(event, 'Tab2')">Galeria HTML + CSS</button>
-        <button class="tablinks" onclick="openTab(event, 'Tab3')">Pestaña 3</button>
+    <div class="contenedor">
+        <div>
+            <div class="agitar">
+            <a href="https://break7801.github.io/joelpina.github.io/Hoja%20de%20vida/hojadevida.html" title="pagina interactiva">
+                <img src="https://break7801.github.io/joelpina.github.io/resources/icons8-administrator-male-skin-type-7-96.png" alt="icono de icon8">
+            </a>
+            <p>Portafolio</p>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="agitar">
+            <a href="https://break7801.github.io/joelpina.github.io/Generador%20de%20Contrase%C3%B1as%20Aleatorias/contrase%C3%B1a.html" title="pagina interactiva">
+                <img src="https://break7801.github.io/joelpina.github.io/resources/icons8-contrase%C3%B1a-96.png" alt="icono de icon8">
+            </a>
+            <p>Generador de contraseñas</p>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="agitar">
+            <a href="https://break7801.github.io/joelpina.github.io/GaleriaGames/GaleriaG.html" title="pagina interactiva">
+                <img src="https://break7801.github.io/joelpina.github.io/resources/icons8-trifuerza-96.png" alt="icono de icon8">
+            </a>
+            <p>Galeria de Imagenes de VideoJuegos</p>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="agitar">
+            <a href="https://break7801.github.io/joelpina.github.io/Cron%C3%B3metro%20o%20Temporizador/cronometro.html" title="pagina interactiva">
+                <img src="https://break7801.github.io/joelpina.github.io/resources/icons8-cronometro-96.png" alt="icono de icon8">
+            </a>
+            <p>Cronometro o Temporizador</p>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="agitar">
+            <a href="https://break7801.github.io/joelpina.github.io/Galer%C3%ADa%20de%20Im%C3%A1genes%20B%C3%A1sica%20con%20Lightbox/GLingbox.html" title="pagina interactiva">
+                <img src="https://break7801.github.io/joelpina.github.io/resources/icons8-fondo-de-pantalla-animado-96.png" alt="icono de icon8">
+            </a>
+            <p>Galeria de Imagenes LingBox</p>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="agitar">
+            <a href="https://break7801.github.io/joelpina.github.io/P%C3%A1gina%20de%20Notas/notas.html" title="pagina interactiva">
+                <img src="https://break7801.github.io/joelpina.github.io/resources/icons8-crear-nuevo-96.png" alt="icono de icon8">
+            </a>
+            <p>Paginas de Notas</p>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="agitar">
+            <a href="https://break7801.github.io/joelpina.github.io/P%C3%A1gina%20de%20Recetas%20de%20Cocina/receta.html" title="pagina interactiva">
+                <img src="https://break7801.github.io/joelpina.github.io/resources/icons8-chef-cocina-tipo-de-piel-5-96.png" alt="icono de icon8">
+            </a>
+            <p>Pagina de Recetas de Cocina</p>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="agitar">
+            <a href="https://break7801.github.io/joelpina.github.io/interactive.html" title="pagina interactiva">
+                <img src="https://img.icons8.com/clouds/100/paper-plane.png" alt="icono de icon8">
+            </a>
+            <p>Avion de papel</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Boton externo a una pagina -->
-    
-    <div id="content">
-        <div class="ribbon">
-            <img src="https://img.icons8.com/clouds/100/paper-plane.png">
-        </div>
-
-    <div id="Tab1" class="tabcontent">
-        <h2>Hoja de vida</h2>
-        <div class="perfil">
-            <img src="https://s4.anilist.co/file/anilistcdn/character/large/b41055-RZH1b5am1LvO.png" alt="Foto de perfil">
-            <h2>Joel Piña Felipe</h2>
-            <p>Soporte Técnico y Analista de Infraestructura.</p>
-        </div>
-    
-        <div class="seccion">
-            <h3>Experiencia Laboral</h3>
-            <ul>
-                <li><strong>Desarrollador Frontend</strong> en Empresa XYZ (2021 - Actualidad)</li>
-                <li><strong>Desarrollador Web</strong> en Empresa ABC (2018 - 2021)</li>
-                <li><strong>Practicante</strong> en Startup 123 (2017 - 2018)</li>
-            </ul>
-        </div>
-    
-        <div class="seccion">
-            <h3>Educación</h3>
-            <ul>
-                <li><strong>Ingeniería en Sistemas</strong> - Universidad de la Tecnología (2014 - 2018)</li>
-                <li><strong>Curso de Desarrollo Web</strong> - Academia Online (2016)</li>
-            </ul>
-        </div>
-    
-        <div class="seccion">
-            <h3>Habilidades</h3>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React, Angular, Vue</li>
-                <li>Git, GitHub, CI/CD</li>
-            </ul>
-        </div>
-    </div>
-    </div>
-
-    <div id="Tab2" class="tabcontent">
-        <h2>Galeria de juegos</h2>
-        <div class="galeria">
-            <div class="imagenes">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddwuz41-3c460d27-0cf6-4a17-b7a0-13ad92bac684.png/v1/fit/w_724,h_768/shadow_of_the_tomb_raider_icon_ico_by_momen221_ddwuz41-375w-2x.png" alt="">
-                <div>
-                    <h2>Shadow Of The Tomb Rider</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-    
-            <div class="imagenes">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddx6gh7-f297b574-ddf4-4b5e-8ef8-893c1fcc224e.png/v1/fit/w_718,h_768/doom_icon_ico_by_momen221_ddx6gh7-375w-2x.png" alt="">
-                <div>
-                    <h2>Doom</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-    
-            <div class="imagenes">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddu5l3e-c15014c9-472d-4679-a4d4-58586c633215.png/v1/fit/w_512,h_512/doom_eternal_icon_ico_by_momen221_ddu5l3e-375w-2x.png" alt="">
-                <div>
-                    <h2>Doom Eternal</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-        </div>
-    
-        <div class="galeria"> 
-            <div class="column">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddx6og2-42452595-5cf1-4373-a313-4540833c3c31.png/v1/fit/w_731,h_768/monster_hunter_world_icon_ico_by_momen221_ddx6og2-375w-2x.png" alt="">
-                <div>
-                    <h2>Monster Hunter World</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-            
-            <div class="column">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddu2pad-c4713947-65c5-4644-8271-354baa945140.png/v1/fit/w_512,h_512/resident_evil_3_remake_icon_ico_by_momen221_ddu2pad-375w-2x.png" alt="">
-                <div>
-                    <h2>Resident Evil 3</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-            
-            <div class="column">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/dduhvkf-1880e847-0acd-47bc-b0f7-f51326c7a955.png/v1/fit/w_512,h_512/a_plague_tale__innocence_icon_ico_by_momen221_dduhvkf-375w-2x.png" alt="">
-                <div>
-                    <h2>A plague tale: Innocense</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-        </div>
-    
-        <div class="galeria"> 
-            <div class="column">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddwh3ph-92b34e9e-b5fb-4507-a8e1-1253c19b21b9.png/v1/fit/w_375,h_394/sekiro_shadows_die_twice_icon_ico_by_momen221_ddwh3ph-375w.png" alt="">
-                <div>
-                    <h2>Sekiro Shadow Die Twice</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-            
-            <div class="column">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddwsw9n-cc3f31f6-efe0-45a2-be10-01a9c2938619.png/v1/fit/w_737,h_768/tomb_raider_icon_ico_by_momen221_ddwsw9n-375w-2x.png" alt="">
-                <div>
-                    <h2>Tomb Rider</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-            
-            <div class="column">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddwuyya-30b804db-cb8b-4c38-8673-0424401db229.png/v1/fit/w_734,h_768/rise_of_the_tomb_raider_icon_ico_by_momen221_ddwuyya-375w-2x.png" alt="">
-                <div>
-                    <h2>Rise Of The Tomb Rider</h2>
-                    <p>resolucion: 1024*720</p>
-                </div>
-            </div>
-        </div>
-
-    <div id="Tab3" class="tabcontent">
-        <h2>Pestaña 3</h2>
-        <p>Contenido de la pestaña 3.</p>
-    </div>
-
-    <script>
-        function openTab(evt, tabName) {
-            // Ocultar todo el contenido de las pestañas
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Eliminar la clase "active" de todos los botones
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Mostrar el contenido de la pestaña seleccionada y añadir la clase "active" al botón
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-
-        // Mostrar la primera pestaña por defecto
-        document.getElementsByClassName("tablinks")[0].click();
-    </script>
-
-    <!-- Botenes y apartados -->
-
-    
-    <!-- Background SCSS -->
-   
 </body>
 </html>

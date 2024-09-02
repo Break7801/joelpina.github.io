@@ -3,44 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/512/7718/7718808.png" type="image/x-icon">
     <title>Avión de Papel Interactivo</title>
     <style>
         body {
-            margin: 0;
-            background-color: #e0f7fa;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: left;
+            margin: 0; /*Elimina los márgenes predeterminados del cuerpo, asegurando que el contenido comience justo en el borde de la ventana.*/
+            background-color: #cfe2f0; /*Establece un color de fondo suave para el cuerpo.*/
+            overflow: hidden; /*overflow: hidden;: Oculta cualquier contenido que sobrepase los bordes del contenedor, evitando barras de desplazamiento.*/
+            display: flex; /* Convierte el cuerpo en un contenedor flexbox, lo que permite un diseño más flexible y responsivo.*/
+            align-items: flex-start; /*Alinea los elementos dentro del contenedor flexbox hacia la parte superior.*/
+           /* justify-content: center; */
             cursor: none; /* Oculta el cursor para dar la ilusión de que el avión es el cursor */
         }
 
+        /* Estilo del avión */
         .avion {
-            position: fixed; /* Cambiado a fixed para que se mueva en relación con la ventana */
+            position: fixed; /*Fija la posición del avión en la ventana, lo que significa que permanecerá en el mismo lugar incluso si la página se desplaza.*/
+            width: 100px; 
+            height: 100px; 
+            background-image: url('https://break7801.github.io/joelpina.github.io/resources/%E2%80%94Pngtree%E2%80%94paper%20plane%20vector%20icon_3725452.png');
+            background-size: contain; /*Ajusta el tamaño de la imagen para que quepa dentro del elemento sin distorsionar la proporción*/
+            background-repeat: no-repeat; 
+            pointer-events: none; /*Evita que se puedan realizar acciones sobre el avión (como hacer clic), manteniendo su función puramente visual.*/
+            transition: transform 0.05s linear, box-shadow 0.2s ease-in-out; /*Aplica una transición suave a las propiedades transform y box-shadow, creando efectos visuales al pasar el ratón por encima.*/
+            z-index: 1; /*Establece el orden de apilamiento del avión, asegurando que se muestre por encima de otros elementos.*/
+        }
+
+        .avion:hover {
+            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.3);
+        }
+
+            /* Estilo de la nube */
+           .cloud {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100px;
             height: 100px;
-            background-image: url('https://www.svgrepo.com/show/171040/paper-plane-handmade-folded-shape.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            pointer-events: none; /* Hace el avión intangible para el cursor */
-            transition: transform 0.05s linear; /* Velocidad de la transición */
+            justify-content: center;
+            animation: flap 1s infinite ease-in-out; /* Animación de movimiento de ala */
+            }
+            .cloudtw {
+              position: fixed;
+              top: 20%; /* Posición superior del 20% de la pantalla */
+              left: 70%; /* Posición a la izquierda del 70% de la pantalla */
+              transform: translateX(-60%);
+              width: 100px;
+              height: 100px;
+              justify-content: center;
+              animation: flap 1s infinite ease-in-out;
+            }
+            .cloudaw {
+              position: fixed;
+              top: 20%; /* Posición superior del 20% de la pantalla */
+              left: 20%; /* Posición a la izquierda del 70% de la pantalla */
+              transform: translateX(-50%);
+              width: 100px;
+              height: 100px;
+              justify-content: center;
+              animation: flap 1s infinite ease-in-out;
+              z-index: 2;
+            }
+        /* Efecto de sacudida al hacer clic */
+            .cloud.shake, .cloudtw.shake{
+             animation: shake 0.5s;
+            }
+
+            .cloud img{
+            width: 100%;
+            height: auto;
+            }
+
+            .cloudtw img{
+              width: 200%;
+              height: auto;
+            }
+            
+            .cloudaw.shake{
+              animation: shake 0.5s;
+            }
+
+            .cloudaw img {
+              width: 250%;
+              height: auto;
+            }
+        /* Efecto de Movimiento de Ala */
+        @keyframes flap {
+            0%, 100% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            50% {
+                transform: translateX(-50%) rotate(5deg);
+            }
         }
+
+        /* Efecto de Sacudida al Click */
+        @keyframes shake {
+            0% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+            25% { transform: translateX(-50%) translateY(5px) rotate(-5deg); }
+            50% { transform: translateX(-50%) translateY(-5px) rotate(5deg); }
+            75% { transform: translateX(-50%) translateY(5px) rotate(-5deg); }
+            100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+        }
+
+        /* Otros efectos y estilos */
+        .wind-paper {
+            position: absolute;
+            top: 0;
+            left: 131.25px;
+            z-index: 2;
+        }
+
+        .wind-paper div {
+          height: 19.25px;
+  width: 37.5px;
+  transform-origin: 100% 0;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: calc(100% - 1px);
+  background: #fff;
+  transform: rotateX(-5deg);
+  animation: flip 3s ease-in-out infinite;
+        }
+
+        .wind-paper:after {
+            content: "";
+            transform: translateZ(-1000px);
+            display: block;
+            background: rgba(72, 128, 158, 0.8);
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            animation: flip-shadow 3s ease-in-out infinite;
+        }
+      /*
+        button {
+      background-color: blue;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer; 
+      animation: myanimation 3s infinite;
+      top: 50%;
+      left: 100%;
+        }
+
+    @keyframes myanimation {
+      0% {
+        background-color: blue;
+      }
+      50% {
+        background-color: green;
+      }
+      100% {
+        background-color: red;
+      }
+    } */
+
+        @keyframes flip {
+            0% { transform: rotateX(-5deg); }
+            50% { transform: rotateX(-8deg) rotateY(-2deg); }
+            100% { transform: rotateX(-5deg); }
+        }
+
+        @keyframes flip-shadow {
+            0% {
+                width: 27.5px;
+                left: 5px;
+                box-shadow: 0px 0px 10px 5px rgba(72, 128, 158, 0.8);
+                opacity: 1;
+                height: 152px;
+            }
+            50% {
+                width: 7.5px;
+                left: 15px;
+                box-shadow: 0px 0px 10px 15px rgba(72, 128, 158, 0.8);
+                opacity: 0.3;
+                height: 115px;
+            }
+            100% {
+                width: 27.5px;
+                left: 5px;
+                box-shadow: 0px 0px 10px 5px rgba(72, 128, 158, 0.8);
+                opacity: 1;
+                height: 152px;
+            }
+        }
+
+        /*Codigo comentado*/
         
+    /*    
+    .cloud {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    animation: flap 1s infinite ease-in-out; Efecto de movimiento 
+    }
+
+     Primera nube: Centrada 
+    .cloud:nth-of-type(1) {
+    top: 10%;  Posición superior del 10% de la pantalla 
+    left: 30%;  Posición a la izquierda del 30% de la pantalla
+    transform: translateX(-50%);
+    }
+    Segunda nube: A la derecha
+    .cloud:nth-of-type(2) {
+    top: 20%; / Posición superior del 20% de la pantalla
+    left: 70%; / Posición a la izquierda del 70% de la pantalla 
+    transform: translateX(-50%);
+    }
+    */
     </style>
 </head>
 <body>
+  <!-- <button>Haz clic en mí</button> -->
     <div class="avion"></div>
+
+    <div class="cloud">
+        <img src="https://break7801.github.io/joelpina.github.io/resources/image-from-rawpixel-id-15035546-png.png" alt="nube-shake">
+    </div>
+
+    <div class="cloudtw">
+      <img src="https://break7801.github.io/joelpina.github.io/resources/image-from-rawpixel-id-15035546-png.png" alt="nube-shake">
+    </div>
+
+    <div class="cloudaw">
+      <img src="https://break7801.github.io/joelpina.github.io/resources/image-from-rawpixel-id-15035546-png.png" alt="nube-shake">
+    </div>
+
+    <div class="wind-paper">
+        <!-- Viento dinámico -->
+        <div><div><div><div><div><div><div><div><div><div></div></div></div></div></div></div></div></div></div></div>
+    </div>
 
     <script>
         const avion = document.querySelector('.avion');
+        const clouds = document.querySelectorAll('.cloud'); // Selecciona todas las nubes
+        const cloudstw = document.querySelectorAll('.cloudtw'); // Selecciona todas las nubes
+        const cloudsaw = document.querySelectorAll('.cloudaw'); // Selecciona todas las nubes
 
         document.addEventListener('mousemove', (e) => {
             const x = e.clientX - avion.clientWidth / 2;
             const y = e.clientY - avion.clientHeight / 2;
-
             avion.style.transform = `translate(${x}px, ${y}px) rotate(${x / window.innerWidth * 20 - 10}deg)`;
         });
+
+        document.addEventListener('click', () => {
+        clouds.forEach(cloud => {
+        cloud.classList.add('shake');
+        setTimeout(() => cloud.classList.remove('shake'), 500);
+        });
+      });
+
+      document.addEventListener('click', () => {
+        cloudstw.forEach(cloudtw => {
+        cloudtw.classList.add('shake');
+        setTimeout(() => cloudtw.classList.remove('shake'), 500);
+        });
+      });
+
+      document.addEventListener('click', () => {
+        cloudsaw.forEach(cloudaw => {
+        cloudaw.classList.add('shake');
+        setTimeout(() => cloudaw.classList.remove('shake'), 500);
+        });
+      });
     </script>
 </body>
 </html>
-

@@ -1,221 +1,209 @@
-       body {
-  margin-top: 13.5rem;
-  
-  color: #999;
-  font: 400 16px/1.5 "exo", "ubuntu", "segoe ui", "helvetica", "arial", sans-serif;
-  text-align: center;
-  
-  /* img size is 50x50 */
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-  
-  /* Animations */
-  -webkit-animation: bg-scrolling-reverse .92s infinite; /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse .92s infinite; /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse .92s infinite; /* Opera 12+ */
-  animation: bg-scrolling-reverse .92s infinite; /* IE 10+ */
-  
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
-  margin-bottom: 0;
-}      
-        header, main, footer, body {
-         margin: 0;
-         padding: 0;
-        }
-        
-        /* Efecto de texto */  
-        .titulo {
-            text-align: center;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: dodgerblue;
-            transition: color 0.3s;
-        }
+     /* Estilos generales del cuerpo */
+      html {
+        --s: 50px;
+        --c: #191b22;
+        --_s: calc(2*var(--s)) calc(2*var(--s));
+        --_g: 35.36% 35.36% at;
+        --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+        background: 
+          radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+          radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+          radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+          radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+          repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+          radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+        background-attachment: fixed;
+      }
+body {
+    margin-top: 13.5rem;
+    margin-bottom: 0;
+    color: #999;
+    font: 400 16px/1.5 "exo", "ubuntu", "segoe ui", "helvetica", "arial", sans-serif;
+    text-align: center;
+}
 
-        .titulo:hover {
-            color: #000000;
-        }
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+   /* height: 100vh; /* Ajusta según sea necesario */
+    gap: 20px; /* Espacio entre los títulos */
+}
+header, main, footer, body {
+    margin: 0;
+    padding: 0;
+}
 
-        .galeria {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas nuevas */
-            gap: 30px;
-            margin: 30px;
-        }
-        /* Efecto de imagenes */
-        .imagenes img, .column img {
-            width: 200px;
-            max-width: 200px; /* Limita el ancho máximo */
-            height: auto; /* Mantiene la proporción de la imagen */
-            object-fit: cover;
-            padding: 5px;
-            transition: transform 0.3s ease-in-out;
-        }
-        @media (max-width: 768px) {
-    .imagenes, .column {
+/* Estilo de texto de título */
+.titulo {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: dodgerblue;
+    transition: color 0.3s;
+}
+
+.titulo:hover {
+    color: #000000;
+}
+
+.glitch {
+    font-size: 2em;
+    font-family: "Raleway", sans-serif;
+    font-weight: 1000;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative; /* Cambiado a relative */
+    transform: none; /* Remueve la transformación */
+    margin: 0;
+    color: #fff;
+    letter-spacing: 5px;
+}
+  .glitch:before, .glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+  }
+  .glitch:after {
+    color: #f0f;
+    z-index: -2;
+  }
+  .glitch:before {
+    color: #0ff;
+    z-index: -1;
+  }
+  .glitch:hover:before {
+    -webkit-animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 5;
+            animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 5;
+  }
+  .glitch:hover:after {
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 5;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .glitch {
+      font-size: 3em;
+    }
+  }
+
+.contenedor {
+    display: flex;
+    flex-direction: row; /* Ordena los elementos en fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas nuevas */
+    gap: 30px;
+    margin: 30px;
+  }
+  /*Efecto sobre el texto*/
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: justify;
+    line-height: 1.5;
+  }
+  p:hover {
+    color: #007bff; /* Azul claro */
+  }
+
+  /* Efecto de imágenes */
+.contenedor img {
+    width: 200px;
+    max-width: 200px; /* Limita el ancho máximo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover;
+    padding: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover en imágenes */
+.contenedor img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo de encabezados de imágenes */
+.contenedor h2 {
+    --s: 0.1em; /* Grosor de la línea */
+    --c: #2c4bff; /* Color */
+    color: rgb(8, 134, 156);
+    padding-bottom: var(--s);
+    background: 
+        linear-gradient(90deg, var(--c) 50%, #000 0) calc(100% - var(--_p, 0%)) / 200% 100%,
+        linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.contenedor h2:hover {
+    --_p: 100%;
+}
+
+.contenedor p {
+    text-align: center;
+}
+
+/* Media Queries para hacer las imágenes responsivas */
+@media (max-width: 768px) {
+    .contenedor {
         flex: 1 1 45%; /* Cada imagen ocupará un 45% del contenedor en pantallas medianas */
-      }
-      }
+    }
+}
 
-      @media (max-width: 480px) {
-      .imagenes, .column {
+@media (max-width: 480px) {
+    .contenedor {
         flex: 1 1 100%; /* Cada imagen ocupará el 100% del contenedor en pantallas pequeñas */
     }
 }
-        .imagenes img:hover, .column img:hover {
-            transform: scale(1.05);
-        }
-        .imagenes h2, .column h2 {
-            --s: 0.1em;   /* the thickness of the line */
-            --c: #2c4bff; /* the color */
-  
-            color: rgb(8, 134, 156);
-            padding-bottom: var(--s);
-           background: 
-           linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
-           linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
-           -webkit-background-clip: text,padding-box;
-           background-clip: text,padding-box;
-           transition: 0.5s;
-           text-align: center;
-           
-        }
-        .imagenes h2:hover, .column h2:hover {
-            --_p: 100%
-        }
-        .imagenes p, .column p {
-            text-align: center;
-        }
-         /* transform: scale(1.05); */
-        
-        
-        
-         /* Boton externo a una pagina */
-         
-         #content {
-            position: relative;
-         }
-         .ribbon {
-            position: absolute;
-            top: -167px;
-            right: 500px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añadido para animar el hover */
-         }
-         .ribbon:hover {
-            transform: scale(1.1); /* Aumenta el tamaño del botón en un 10% al pasar el mouse */
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
-        }
-         
- /* Estilos para las pestañas */
- .tab {
-            overflow: hidden;
-            background-color: #f1f1f1;
-            border-bottom: 1px solid #ccc;
-        }
 
-        .tab button {
-            background-color: inherit;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            transition: background-color 0.3s;
-            font-size: 17px;
-        }
-
-        .tab button:hover {
-            background-color: #ddd;
-        }
-
-        .tab button.active {
-            background-color: #ccc;
-        }
-
-        .tabcontent {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-top: none;
-        }
-         /* Estilos para las pestañas */
-
-         /* Perfil hoja de vida */
-         .perfil {
-            margin: 20px;
-            padding: 20px;
-            background-color: #111;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .perfil img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .perfil h2 {
-            color: yellow;
-            margin-top: 10px;
-        }
-
-        .perfil p {
-            color: #ccc;
-            margin-top: 5px;
-        }
-
-        .seccion {
-            margin: 20px;
-            padding: 20px;
-            background-color: #222;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .seccion h3 {
-            color: #2c4bff;
-            margin-bottom: 10px;
-        }
-
-        .seccion ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .seccion ul li {
-            margin: 5px 0;
-            text-align: left;
-            color: #ccc;
-        }
-        /*Perfil hoja de vida*/
-
-        /*  Background SCSS */ 
-        @-webkit-keyframes bg-scrolling-reverse {
-        100% { background-position: 50px 50px; }
-        }
-        @-moz-keyframes bg-scrolling-reverse {
-        100% { background-position: 50px 50px; }
-        }
-        @-o-keyframes bg-scrolling-reverse {
-        100% { background-position: 50px 50px; }
-        }
-        @keyframes bg-scrolling-reverse {
-        100% { background-position: 50px 50px; }
-        }
-
-        @-webkit-keyframes bg-scrolling {
-        0% { background-position: 50px 50px; }
-        }
-        @-moz-keyframes bg-scrolling {
-        0% { background-position: 50px 50px; }
-        }
-        @-o-keyframes bg-scrolling {
-        0% { background-position: 50px 50px; }
-        }
-        @keyframes bg-scrolling {
-        0% { background-position: 50px 50px; }
-        }
+/*Animaciones de glich*/
+@-webkit-keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-5px, 5px);
+    }
+    40% {
+      transform: translate(-5px, -5px);
+    }
+    60% {
+      transform: translate(5px, 5px);
+    }
+    80% {
+      transform: translate(5px, -5px);
+    }
+    to {
+      transform: translate(0);
+    }
+  }
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-5px, 5px);
+    }
+    40% {
+      transform: translate(-5px, -5px);
+    }
+    60% {
+      transform: translate(5px, 5px);
+    }
+    80% {
+      transform: translate(5px, -5px);
+    }
+    to {
+      transform: translate(0);
+    }
+  }
    

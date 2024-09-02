@@ -1,0 +1,79 @@
+<!-- Página de Recetas de Cocina -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Recetas de Cocina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .recipe-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #d9534f;
+        }
+
+        .recipe-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #5bc0de;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li::before {
+            content: "🍴 ";
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-container">
+        <h1>Receta: Pasta Carbonara</h1>
+        <img class="recipe-img" src="https://example.com/pasta.jpg" alt="Pasta Carbonara">
+        <h2 class="section-title">Ingredientes:</h2>
+        <ul>
+            <li>200g de espaguetis</li>
+            <li>100g de panceta</li>
+            <li>2 huevos</li>
+            <li>50g de queso parmesano</li>
+            <li>Sal y pimienta al gusto</li>
+        </ul>
+        <h2 class="section-title">Pasos a seguir:</h2>
+        <ol>
+            <li>Hervir los espaguetis en agua con sal.</li>
+            <li>Freír la panceta hasta que esté dorada.</li>
+            <li>Batir los huevos y mezclar con el queso parmesano.</li>
+            <li>Escurrir los espaguetis y mezclarlos con la panceta y los huevos.</li>
+            <li>Servir caliente y disfrutar.</li>
+        </ol>
+    </div>
+
+</body>
+</html>

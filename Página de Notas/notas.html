@@ -1,0 +1,92 @@
+<!-- Página de Notas -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .note-container {
+            max-width: 600px;
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #5cb85c;
+        }
+
+        .note-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .add-note {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .notes-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .note-item {
+            background-color: #e7f7e7;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="note-container">
+        <h1>Mis Notas</h1>
+        <input type="text" class="note-input" placeholder="Escribe una nota...">
+        <button class="add-note">Agregar Nota</button>
+        <ul class="notes-list"></ul>
+    </div>
+
+    <script>
+        const input = document.querySelector('.note-input');
+        const addButton = document.querySelector('.add-note');
+        const notesList = document.querySelector('.notes-list');
+
+        addButton.addEventListener('click', () => {
+            const noteText = input.value.trim();
+            if (noteText) {
+                const noteItem = document.createElement('li');
+                noteItem.textContent = noteText;
+                noteItem.classList.add('note-item');
+                notesList.appendChild(noteItem);
+                input.value = '';
+            }
+        });
+    </script>
+
+</body>
+</html>

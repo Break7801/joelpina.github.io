@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galery Games</title>
+    <style>
+   body {
+    margin-top: 13.5rem;
+    margin-bottom: 0;
+    color: #999;
+    font: 400 16px/1.5 "exo", "ubuntu", "segoe ui", "helvetica", "arial", sans-serif;
+    text-align: center;
+
+    /* Imagen de fondo repetida */
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+
+    /* Animaciones de fondo */
+    -webkit-animation: bg-scrolling-reverse .92s infinite;
+    -moz-animation: bg-scrolling-reverse .92s infinite;
+    -o-animation: bg-scrolling-reverse .92s infinite;
+    animation: bg-scrolling-reverse .92s infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+header, main, footer, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de texto de título */
+.titulo {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: dodgerblue;
+    transition: color 0.3s;
+}
+
+.titulo:hover {
+    color: #000000;
+}
+
+/* Estilo de galería */
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas nuevas */
+    gap: 30px;
+    margin: 30px;
+}
+
+.imagenes, .column {
+            position: relative; /* Necesario para posicionar el botón dentro del contenedor */
+        }
+
+        .imagenes img, .column img {
+            width: 200px;
+            max-width: 200px;
+            height: auto;
+            object-fit: cover;
+            padding: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .imagenes img:hover, .column img:hover {
+            transform: scale(1.05);
+        }
+
+.viñeta {
+    display: none; /* Oculta el efecto de viñeta por defecto */
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), transparent);
+    padding: 20px;
+    color: white; /* Para texto claro sobre fondo oscuro */
+}
+
+.viñeta.show {
+            display: block; /* Muestra la viñeta cuando se activa */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Sombra alrededor */
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Borde con resplandor */
+            transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out; /* Suaviza la transición */
+        }
+
+/* Botón desplegable para activar la viñeta */
+.toggle-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: rgba(50, 50, 50, 0.7); /* Nuevo color al pasar el mouse */
+            transition: background-color 0.3s; /* Suaviza la transición */
+        }
+
+        /* Estilo del botón cuando se hace clic */
+    .toggle-btn:active {
+    transform: scale(0.95); /* Hace que el botón se encoja ligeramente al hacer clic */
+    background-color: rgba(0, 0, 0, 0.8); /* Cambia el color al hacer clic */
+    transition: transform 0.1s, background-color 0.3s; /* Suaviza las animaciones */
+}
+
+
+/* Media Queries para hacer las imágenes responsivas */
+@media (max-width: 768px) {
+    .imagenes, .column {
+        flex: 1 1 45%; /* Cada imagen ocupará un 45% del contenedor en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .imagenes, .column {
+        flex: 1 1 100%; /* Cada imagen ocupará el 100% del contenedor en pantallas pequeñas */
+    }
+}
+
+/* Animaciones de fondo */
+@-webkit-keyframes bg-scrolling-reverse {
+    100% { background-position: 50px 50px; }
+}
+
+@-moz-keyframes bg-scrolling-reverse {
+    100% { background-position: 50px 50px; }
+}
+
+@-o-keyframes bg-scrolling-reverse {
+    100% { background-position: 50px 50px; }
+}
+
+@keyframes bg-scrolling-reverse {
+    100% { background-position: 50px 50px; }
+}
+
+@-webkit-keyframes bg-scrolling {
+    0% { background-position: 50px 50px; }
+}
+
+@-moz-keyframes bg-scrolling {
+    0% { background-position: 50px 50px; }
+}
+
+@-o-keyframes bg-scrolling {
+    0% { background-position: 50px 50px; }
+}
+
+@keyframes bg-scrolling {
+    0% { background-position: 50px 50px; }
+}
+
+    </style>
+</head>
+<body>
+    <h2 class="titulo">Galería de imagenes de juegos</h2>
+    <p class="titulo">¡Explora nuestras recomendaciones de juegos, presiona información y disfruta de nuestra selección, disfruta!</p>
+        <!-- Galería de imágenes con flexbox -->
+        <div class="galeria">
+            <!-- Primera fila de imágenes -->
+            <div class="imagenes">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddwuz41-3c460d27-0cf6-4a17-b7a0-13ad92bac684.png/v1/fit/w_724,h_768/shadow_of_the_tomb_raider_icon_ico_by_momen221_ddwuz41-375w-2x.png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>Shadow of the Tomb Raider</h2>
+                    <p>Es la última entrega de la trilogía de Tomb Raider protagonizada por Lara Croft. En este juego, Lara viaja a América Central en busca de una ciudad perdida, enfrentándose a peligros naturales y a una organización secreta. Combina acción, exploración y resolución de puzzles.</p>
+                </div>
+            </div>
+    
+            <div class="imagenes">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddx6gh7-f297b574-ddf4-4b5e-8ef8-893c1fcc224e.png/v1/fit/w_718,h_768/doom_icon_ico_by_momen221_ddx6gh7-375w-2x.png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>Doom</h2>
+                    <p>Un antiguo mal ha sido liberado del infierno, y solo un marine espacial puede detenerlo. Arma hasta los dientes, el protagonista se adentra en las profundidades del infierno para enfrentar hordas de demonios y desvelar los secretos de una antigua profecía.</p>
+                </div>
+            </div>
+    
+            <div class="imagenes">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddu5l3e-c15014c9-472d-4679-a4d4-58586c633215.png/v1/fit/w_512,h_512/doom_eternal_icon_ico_by_momen221_ddu5l3e-375w-2x.png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>Doom Eternal</h2>
+                    <p>Las fuerzas del infierno han invadido la Tierra, y la humanidad está al borde de la extinción. Como el último Doom Slayer, deberás cazar demonios a través de dimensiones para poner fin a su reinado de terror. ¿Qué oscuros secretos se esconden detrás de esta invasión demoníaca?</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Segunda fila de imágenes -->
+        <div class="galeria"> 
+            <div class="column">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddx6og2-42452595-5cf1-4373-a313-4540833c3c31.png/v1/fit/w_731,h_768/monster_hunter_world_icon_ico_by_momen221_ddx6og2-375w-2x.png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>Monster Hunter World</h2>
+                    <p>Un nuevo mundo lleno de criaturas gigantescas se ha abierto a la caza. Los cazadores más valientes se adentran en este ecosistema salvaje para enfrentar a bestias colosales y desentrañar los misterios de este antiguo mundo. ¿Qué fuerzas ocultas gobiernan esta tierra y qué secretos guardan sus criaturas más peligrosas?</p>
+                </div>
+            </div>
+            
+            <div class="column">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddu2pad-c4713947-65c5-4644-8271-354baa945140.png/v1/fit/w_512,h_512/resident_evil_3_remake_icon_ico_by_momen221_ddu2pad-375w-2x.png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>Resident Evil 3</h2>
+                    <p>Raccoon City está a punto de caer. Jill Valentine, una de las últimas supervivientes, debe escapar de la ciudad infestada de zombis y revelar la verdad detrás del brote del virus T. ¿Qué oscuros experimentos se llevaron a cabo en las sombras de esta ciudad y quién está detrás de esta pesadilla?</p>
+                </div>
+            </div>
+            
+            <div class="column">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/dduhvkf-1880e847-0acd-47bc-b0f7-f51326c7a955.png/v1/fit/w_512,h_512/a_plague_tale__innocence_icon_ico_by_momen221_dduhvkf-375w-2x.png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>A Plague Tale: Innocence</h2>
+                    <p>En un mundo devastado por la peste y las ratas, Amicia y su hermano Hugo emprenden un peligroso viaje en busca de un refugio seguro. Perseguidos por la Inquisición y acechados por hordas de ratas, los hermanos deberán confiar el uno en el otro para sobrevivir. ¿Podrán escapar de las sombras y encontrar la esperanza en medio de la oscuridad?</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Tercera fila de imágenes -->
+        <div class="galeria"> 
+            <div class="column">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddwh3ph-92b34e9e-b5fb-4507-a8e1-1253c19b21b9.png/v1/fit/w_375,h_394/sekiro_shadows_die_twice_icon_ico_by_momen221_ddwh3ph-375w.png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>Sekiro: Shadows Die Twice</h2>
+                    <p>Un shinobi deshonrado busca venganza y redimirse. En un Japón feudal plagado de conflictos, deberá enfrentarse a poderosos guerreros y superar desafíos mortales para salvar a su señor. ¿Qué secretos oculta el pasado del shinobi y qué destino le espera en este mundo de sombras?</p>
+                </div>
+            </div>
+            
+            <div class="column">
+                <img src="https://break7801.github.io/joelpina.github.io/resources/pngwing.com(1).png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>Hollow Knight</h2>
+                    <p>Un insecto caballero desciende a las profundidades de un reino subterráneo en ruinas. Explorando cavernas olvidadas y enfrentándose a criaturas extrañas, descubrirá los secretos de un antiguo imperio y los horrores que acechan en las sombras. ¿Qué fuerzas oscuras gobiernan este reino y qué destino le espera al caballero?</p>
+                </div>
+            </div>
+            
+            <div class="column">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddw9hr8-c34f0957-0d0f-456b-8237-663fdce10822.png/v1/fit/w_722,h_768/ori_and_the_will_of_the_wisps_icon_ico_by_momen221_ddw9hr8-375w-2x.png" alt="">
+                <button class="toggle-btn">Info</button>
+                <div class="viñeta">
+                    <h2>Ori and the Will of the Wisps</h2>
+                    <p>En un bosque mágico lleno de maravillas, Ori, una pequeña criatura, emprende un viaje para encontrar su lugar en el mundo. Guiado por una misteriosa luz, deberá superar peligrosos obstáculos y enfrentar a criaturas oscuras para salvar a sus amigos. ¿Qué secretos oculta el bosque y cuál es el verdadero destino de Ori?</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Script para mostrar/ocultar la viñeta al hacer clic en el botón
+            document.querySelectorAll('.toggle-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const vignette = button.nextElementSibling;
+                    vignette.classList.toggle('show');
+                });
+            });
+        </script>
+</body>
+</html>

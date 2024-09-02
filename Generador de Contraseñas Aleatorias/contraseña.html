@@ -24,7 +24,6 @@
             margin: 0;
             background-color: #111111;
         }
-
         .generator-container {
             text-align: left;
             color: #fff;
@@ -32,7 +31,6 @@
             overflow: hidden;
             padding: 90px;
             border-radius: 0%;
-            
             margin: 10px 20px 30px 100px;
             flex-wrap: wrap;
             position: relative;
@@ -43,12 +41,10 @@
             font-family: sans-serif;
             padding: 9em;
         }
-        
    span {
   position: absolute;
   border-radius: 100vmax;
 }
-
 .top {
   top: 0;
   left: 0;
@@ -61,7 +57,6 @@
     rgb(255, 49, 49)
   );
 }
-
 .bottom {
   right: 0;
   bottom: 0;
@@ -73,7 +68,6 @@
     transparent 50%
   );
 }
-
 .right {
   top: 0;
   right: 0;
@@ -86,7 +80,6 @@
     rgb(0, 255, 255)
   );
 }
-
 .left {
   left: 0;
   bottom: 0;
@@ -99,38 +92,29 @@
     transparent 70%
   );
 }
-
 .top {
   animation: animateTop 3s ease-in-out infinite;
 }
-
 .bottom {
   animation: animateBottom 3s ease-in-out infinite;
 }
-
 .right {
   animation: animateRight 3s ease-in-out infinite;
 }
-
 .left {
   animation: animateLeft 3s ease-in-out infinite;
 }
-
-
-
         .password-display {
             font-size: 24px;
             margin: 20px 0;
             color: #007bff;
             animation: flashEffect 0.5s ease-in-out;
             transform: none;
-        }
-        
+        } 
 @keyframes flashEffect {
     0% { box-shadow: 0 0 10px 2px #007bff; }
     100% { box-shadow: 0 0 0px 0px transparent; }
 }
-
         button {
             background-color: rgb(255, 255, 255);
             padding: 15px 32px;
@@ -146,14 +130,11 @@
             position: absolute;
             border-radius: 10%;
             
-        }
-
-       
+        } 
         button p {
         font-size: 0.95rem;
         text-align: center;
         }
-
         .copycontrol {
             background-color: rgb(255, 255, 255);
             padding: 15px 32px;
@@ -167,10 +148,8 @@
             top: 80%;
             left: 40%;
             position: absolute;
-            border-radius: 10%;
-            
+            border-radius: 10%;  
         }
-
         .copycontrol p {
         font-size: 0.95rem;
         text-align: center;
@@ -182,7 +161,6 @@
             70% { background-color: rgba(126, 255, 212, 0.815); }
             100% { background-color: rgb(126, 255, 212); }
         }
-
         .length-input {
             padding: 10px;
             font-size: 16px;
@@ -191,17 +169,14 @@
             width: 80px;
             margin: 10px 0;
         }
-
         .typing {
             font-family: "Inconsolata", Consolas, monospace;
             font-size: 20px;
             color: #d7b94c;
         }
-
         .generator-container select{
             width: 260px;
         }
-
         .glitch {
   font-size: 2.2rem;
   font-weight: bold;
@@ -211,82 +186,69 @@
     0.025em 0.04em 0 #fffc00;
   animation: glitch 725ms infinite;
 }
-
 .glitch span {
   position: absolute;
   top: 0;
   left: 0;
 }
-
 .glitch span:first-child {
   animation: glitch 500ms infinite;
   clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
   transform: translate(-0.04em, -0.03em);
   opacity: 0.75;
 }
-
 .glitch span:last-child {
   animation: glitch 375ms infinite;
   clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
   transform: translate(0.04em, 0.03em);
   opacity: 0.75;
 }
-
 #strength-meter {
     width: 100%;
     height: 10px;
     margin-top: 10px;
 }
-
 @keyframes animateTop {
   25% {
     width: 100%;
     opacity: 1;
   }
-
   30%,
   100% {
     opacity: 0;
   }
 }
-
 @keyframes animateBottom {
   0%,
   50% {
     opacity: 0;
     width: 0;
   }
-
   75% {
     opacity: 1;
     width: 100%;
   }
-
   76%,
   100% {
     opacity: 0;
   }
 }
-
 @keyframes animateRight {
   0%,
   25% {
     opacity: 0;
     height: 0;
   }
-
   50% {
     opacity: 1;
     height: 100%;
   }
-
   55%,
   100% {
     height: 100%;
     opacity: 0;
   }
 }
-
 @keyframes animateLeft {
   0%,
   75% {
@@ -294,13 +256,11 @@
     bottom: 0;
     height: 0;
   }
-
   100% {
     opacity: 1;
     height: 100%;
   }
 }
-
 @keyframes glitch {
   0% {
     text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
@@ -331,7 +291,6 @@
       -0.04em -0.025em 0 #fffc00;
   }
 }
-
 /* Media Queries para Responsividad */
 @media (max-width: 1024px) {
     .generator-container {
@@ -339,59 +298,48 @@
         margin: 10px;
         max-width: 90%;
     }
-
     button, .copycontrol {
         position: static; /* Cambia a posicionamiento estático para evitar solapamientos */
         margin: 10px auto; /* Centra los botones en la pantalla */
     }
-
     .length-input {
         width: 100%; /* Asegura que el input tome todo el ancho disponible */
     }
 }
-
 @media (max-width: 768px) {
     .generator-container {
         padding: 20px; /* Reduce el padding para pantallas más pequeñas */
         margin: 5px;
         text-align: center; /* Centra el texto en pantallas pequeñas */
     }
-
     .password-display {
         font-size: 20px; /* Reduce el tamaño de la fuente para pantallas más pequeñas */
     }
-
     button, .copycontrol {
         width: 100%; /* Botones de ancho completo en pantallas móviles */
         padding: 10px;
     }
 }
-
 @media (max-width: 480px) {
     .generator-container {
         padding: 10px; /* Padding reducido para pantallas muy pequeñas */
         margin: 0;
     }
-
     .length-input, select {
         width: 100%; /* Input y select de ancho completo */
     }
-
     .password-display {
         font-size: 18px; /* Ajusta el tamaño de fuente aún más pequeño */
     }
 }
-
 /*
 .flash {
     animation: flashEffect 0.5s ease-in-out;
 }
 */
-
     </style>
 </head>
 <body>
-
     <div class="generator-container">
       <p class="glitch">
         <span aria-hidden="true">Generador de contraseñas</span>
@@ -413,16 +361,13 @@
         <button id="copy-btn" class="copycontrol">Copiar</button>
         <progress id="strength-meter" value="0" max="100"></progress>
     </div>
-
     <script>
         const generateButton = document.getElementById('generate');
         const passwordDisplay = document.getElementById('password');
         const lengthInput = document.getElementById('length');
         const difficultySelect = document.getElementById('difficulty');
-
         function generatePassword(length, type) {
             let chars = '';
-
             // Definir los caracteres según la selección
             if (type === 'easy-say') {
                 chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Solo letras
@@ -431,7 +376,6 @@
             } else if (type === 'all-chars') {
                 chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
             }
-
             let password = '';
             for (let i = 0; i < length; i++) {
                 const randomIndex = Math.floor(Math.random() * chars.length);
@@ -439,7 +383,6 @@
             }
             return password;
         }
-
         generateButton.addEventListener('click', () => {
             const length = parseInt(lengthInput.value);
             const difficulty = difficultySelect.value;
@@ -450,9 +393,7 @@
                 alert('Por favor, ingresa una longitud entre 4 y 20.');
             }
         });
-
         const copyButton = document.getElementById('copy-btn');
-
         copyButton.addEventListener('click', () => {
     const password = passwordDisplay.textContent;
     if (password) {
@@ -472,7 +413,6 @@ function calculateStrength(password) {
     if (password.length >= 12) strength += 20;
     return strength;
 }
-
 generateButton.addEventListener('click', () => {
     const length = parseInt(lengthInput.value);
     const difficulty = difficultySelect.value;
@@ -484,6 +424,5 @@ generateButton.addEventListener('click', () => {
     }
 }); 
     </script>
-
 </body>
 </html>

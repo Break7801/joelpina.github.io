@@ -7,12 +7,6 @@
     <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <style>
-                *
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
     @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -22,7 +16,7 @@
   }
 }
 .gradient {
-  --size: 750px;
+  --size: 500px;
   --speed: 50s;
   --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
   width: var(--size);
@@ -38,6 +32,13 @@
     --size: 500px;
   }
 }
+}
+                *
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
         /* Estilos para el perfil de hoja de vida */
         body {
@@ -310,6 +311,7 @@ span {
             <span class="right"></span>
             <span class="bottom"></span>
             <span class="left"></span>
+            <div class="gradient"></div>
         </div>    
         <!-- Sección de experiencia laboral -->
         <div class="seccion">

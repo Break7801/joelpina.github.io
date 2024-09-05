@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.freepik.com/512/7718/7718808.png" type="image/x-icon">
     <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"
     <style>
                 *,
 ::before,
@@ -23,31 +24,32 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #111111;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         /* Estilo de texto de título */
         .perfil {
             text-align: center;
             color: #fff;
             background-color: #222;
-            overflow: hidden;
-            padding: 10px;
-            border-radius: 0%;
-            margin: 10px 10px 10px 30px;
-            flex-wrap: wrap;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
             position: relative;
             border-top: 5px solid rgba(255, 49, 49, 0.5);
             border-right: 5px solid rgba(0, 255, 255, 0.5);
             border-bottom: 5px solid rgba(57, 255, 20, 0.5);
             border-left: 5px solid rgba(255, 255, 113, 0.5);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            font-family: sans-serif;
-            padding: 5em;
+            max-width: 400px;
+            flex: 1 1 300px;
         }
 .perfil img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     object-fit: cover;
+    max-width: 100%;
 }
 .perfil h2 {
     color: yellow;
@@ -131,6 +133,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 .titulo:hover {
     color: #000000;
@@ -218,45 +221,53 @@ span {
 }
 /* Media Queries para Responsividad */
 @media (max-width: 1024px) {
-    .generator-container {
-        padding: 40px; /* Ajusta el padding para pantallas medianas */
-        margin: 10px;
-        max-width: 90%;
-    }
-    button, .copycontrol {
-        position: static; /* Cambia a posicionamiento estático para evitar solapamientos */
-        margin: 10px auto; /* Centra los botones en la pantalla */
-    }
-    .length-input {
-        width: 100%; /* Asegura que el input tome todo el ancho disponible */
-    }
-}
-@media (max-width: 768px) {
-    .generator-container {
-        padding: 20px; /* Reduce el padding para pantallas más pequeñas */
-        margin: 5px;
-        text-align: center; /* Centra el texto en pantallas pequeñas */
-    }
-    .password-display {
-        font-size: 20px; /* Reduce el tamaño de la fuente para pantallas más pequeñas */
-    }
-    button, .copycontrol {
-        width: 100%; /* Botones de ancho completo en pantallas móviles */
-        padding: 10px;
-    }
-}
-@media (max-width: 480px) {
-    .generator-container {
-        padding: 10px; /* Padding reducido para pantallas muy pequeñas */
-        margin: 0;
-    }
-    .length-input, select {
-        width: 100%; /* Input y select de ancho completo */
-    }
-    .password-display {
-        font-size: 18px; /* Ajusta el tamaño de fuente aún más pequeño */
-    }
-}
+            body {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .titulo {
+                margin: 0 auto;
+                width: auto;
+                writing-mode: horizontal-tb;
+                text-orientation: mixed;
+            }
+
+            .perfil,
+            .seccion {
+                max-width: 90%;
+                flex: 1 1 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .perfil img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .seccion h3 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .perfil,
+            .seccion {
+                max-width: 95%;
+                padding: 10px;
+            }
+
+            .perfil img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .titulo {
+                font-size: 18px;
+                text-align: center;
+            }
+        }
 </style>
 </head>
 <body>

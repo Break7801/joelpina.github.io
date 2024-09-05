@@ -160,9 +160,13 @@ span {
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
-.titulo:hover {
-    color: white;
+    font-weight: bold;
+            background: linear-gradient(270deg, #ff4b2b, #ff416c, #42e695, #3bb2b8);
+            background-size: 600% 600%;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text; /* Necesario para navegadores WebKit */
+            animation: gradientAnimation 8s ease infinite;
 }
 /* Estilos de secciones */
 .seccion {

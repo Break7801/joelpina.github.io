@@ -124,6 +124,10 @@ header, main, footer, body {
     object-fit: cover;
     padding: 5px;
     transition: transform 0.3s ease-in-out;
+    image-rendering: optimizeQuality; /*Optimizacion de imagen*/
+
+  /* Safari seems to support, but seems deprecated and does the same thing as the others. */
+    image-rendering: -webkit-optimize-contrast;
 }
 /* Efecto hover en imágenes */
 .contenedor img:hover {

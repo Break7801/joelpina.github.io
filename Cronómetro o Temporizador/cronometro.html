@@ -65,7 +65,7 @@
 <body>
 
     <div class="timer-container">
-        <div class="time-display" id="time">00:00:00</div>
+        <div class="time-display" id="time">00:00:00:00</div>
         <div class="controls">
             <button class="btn btn-start" id="start">Iniciar</button>
             <button class="btn btn-stop" id="stop">Detener</button>
@@ -77,6 +77,7 @@
         let hours = 0;
         let minutes = 0;
         let seconds = 0;
+        let mseconds = 0;
         let interval;
 
         const timeDisplay = document.getElementById('time');
@@ -86,13 +87,17 @@
 
         function updateDisplay() {
             const formatNumber = (num) => String(num).padStart(2, '0');
-            timeDisplay.textContent = `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;
+            timeDisplay.textContent = `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}:${formatNumber(mseconds)}`;
         }
 
         function startTimer() {
             clearInterval(interval);
             interval = setInterval(() => {
-                seconds++;
+                mseconds += 10;
+                if (mseconds === 100) {
+                    mseconds = 0;
+                    seconds++;
+                }
                 if (seconds === 60) {
                     seconds = 0;
                     minutes++;
@@ -102,7 +107,7 @@
                     hours++;
                 }
                 updateDisplay();
-            }, 1000);
+            }, 100);
         }
 
         function stopTimer() {
@@ -114,6 +119,7 @@
             hours = 0;
             minutes = 0;
             seconds = 0;
+            mseconds = 0;
             updateDisplay();
         }
 

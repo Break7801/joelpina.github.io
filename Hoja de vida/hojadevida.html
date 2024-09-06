@@ -75,6 +75,7 @@
     height: 150px;
     object-fit: cover;
     max-width: 100%;
+    image-rendering: optimizeQuality;
 }
 .perfil h2 {
     color: yellow;
@@ -194,6 +195,61 @@ span {
     margin: 5px 0;
     text-align: left;
     color: #ccc;
+}
+
+/*8bit box*/
+.box {
+  height: 200px;
+  width: 300px;
+  position: relative;
+}
+
+.box__line {
+  position: absolute;
+  background: white;
+}
+.box__line--top, .box__line--bottom {
+  height: 8px;
+  width: 100%;
+}
+.box__line--top::before, .box__line--top::after, .box__line--bottom::before, .box__line--bottom::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+}
+.box__line--top {
+  top: -8px;
+}
+.box__line--top::before {
+  left: 0;
+  bottom: -8px;
+}
+.box__line--top::after {
+  right: 0;
+  bottom: -8px;
+}
+.box__line--bottom {
+  bottom: -8px;
+}
+.box__line--bottom::before {
+  left: 0;
+  top: -8px;
+}
+.box__line--bottom::after {
+  right: 0;
+  top: -8px;
+}
+.box__line--left, .box__line--right {
+  width: 8px;
+  height: 100%;
+}
+.box__line--left {
+  left: -8px;
+}
+.box__line--right {
+  right: -8px;
 }
      @keyframes gradientAnimation {
             0% {
@@ -339,16 +395,16 @@ span {
         <div class="seccion">
             <h3>Educación</h3>
             <ul>
-                <li><strong>Ingeniería en Sistemas</strong> - Universidad de la Tecnología (2014 - 2018)</li>
-                <li><strong>Curso de Desarrollo Web</strong> - Academia Online (xxxx)</li>
+                <li><strong>Tecnico en Computacion</strong> - Universidad ITES(Oscus Sanvalero) (2016 - 2018)</li>
+                <li><strong>Curso de Desarrollo Web</strong> - Teorema / Infotep (xxxx)</li>
             </ul>
         </div>    
         <!-- Sección de habilidades -->
         <div class="seccion">
             <h3>Habilidades</h3>
             <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React, Angular, Vue</li>
+                <li>HTML, CSS,</li>
+                <li>Soporte Tecnico, Servicio al Cliente</li>
                 <li>Git, GitHub, CI/CD</li>
             </ul>
         </div>
@@ -356,21 +412,20 @@ span {
         <div class="seccion">
             <h3>Habilidades</h3>
             <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React, Angular, Vue</li>
-                <li>Git, GitHub, CI/CD</li>
+                <li>CCNA, Ethical Hacking <strong>(EHCA)</strong></li>
+                <li>OSO:27001, Cybersecurity Certified Expert <strong>(CSCE)</strong>, </li>
+                <li>, </li>
             </ul>
         </div>
     <!-- Sección de habilidades -->
         <div class="seccion">
             <h3>Habilidades</h3>
             <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React, Angular, Vue</li>
-                <li>Git, GitHub, CI/CD</li>
+                <li>Analista de sitemas</li>
+                <li>Soporte Infraestructura</li>
+                <li></li>
             </ul>
         </div>
     <div class="gradient"></div>
 </body>
 </html>
-

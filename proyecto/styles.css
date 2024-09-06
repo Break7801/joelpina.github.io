@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    padding: 20px;
+    background-color: white;
+    margin: 20px 0;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    color: #28a745;
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas nuevas */
+    gap: 30px;
+    margin: 30px;
+}
+
+.imagenes, .column {
+            position: relative; /* Necesario para posicionar el botón dentro del contenedor */
+        }
+
+        .imagenes img, .column img {
+            width: 200px;
+            max-width: 200px;
+            height: auto;
+            object-fit: cover;
+            padding: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .imagenes img:hover, .column img:hover {
+            transform: scale(1.05);
+        }

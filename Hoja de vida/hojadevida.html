@@ -15,12 +15,12 @@
   box-sizing: border-box;
 }
         /* Estilos para el perfil de hoja de vida */
-        body {
+        html, body {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: 120vh;
             font-family: Arial, sans-serif;
             margin: 0;
             background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
@@ -174,71 +174,58 @@ span {
     color: #ccc;
 }
 
-/*8bit box*/
-.box {
-  height: 200px;
-  width: 300px;
-  position: relative;
+/*Footer*/
+
+#wrap
+{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	margin: 0 auto 0 auto;
+	overflow: hidden;
 }
 
-.box__line {
-  position: absolute;
-  background: white;
+#lightings
+{
+	bottom: -60px;
+	position: absolute;
+	width: 100%;
 }
-.box__line--top, .box__line--bottom {
-  height: 8px;
-  width: 100%;
+/*
+section
+{
+	/*border-radius
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	height: 20px;
+	width: 100%;
+	position: relative;
+	margin: auto;
+} */
+
+#one
+{
+	/*animation*/
+	-webkit-animation: one 5s ease-in-out infinite alternate;
+	-moz-animation: one 5s ease-in-out infinite alternate;
+	-ms-animation: one 5s ease-in-out infinite alternate;
+	-o-animation: one 5s ease-in-out infinite alternate;
+	animation: one 5s ease-in-out infinite alternate;
 }
-.box__line--top::before, .box__line--top::after, .box__line--bottom::before, .box__line--bottom::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: white;
-}
-.box__line--top {
-  top: -8px;
-}
-.box__line--top::before {
-  left: 0;
-  bottom: -8px;
-}
-.box__line--top::after {
-  right: 0;
-  bottom: -8px;
-}
-.box__line--bottom {
-  bottom: -8px;
-}
-.box__line--bottom::before {
-  left: 0;
-  top: -8px;
-}
-.box__line--bottom::after {
-  right: 0;
-  top: -8px;
-}
-.box__line--left, .box__line--right {
-  width: 8px;
-  height: 100%;
-}
-.box__line--left {
-  left: -8px;
-}
-.box__line--right {
-  right: -8px;
-}
+
+/*Footer*/
+
 /*Stars*/
 .stars {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 27%; /*27%*/
   width: 100%;
   height: 120%;
   transform: rotate(-45deg);
   color: rgb(255, 255, 255);
 }
-
 .star {
   --star-color: var(--primary-color);
   --star-tail-length: 6em;
@@ -563,6 +550,204 @@ span {
   --fall-duration: 8.99s;
   --fall-delay: 0.219s;
 }
+.star:nth-child(51) {
+  --star-tail-length: 5.72em;
+  --top-offset: 24.28vh;
+  --fall-duration: 9.99s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(52) {
+  --star-tail-length: 5.72em;
+  --top-offset: 150.28vh;
+  --fall-duration: 7.99s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(53) {
+  --star-tail-length: 5.72em;
+  --top-offset: 140.28vh;
+  --fall-duration: 8.99s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(54) {
+  --star-tail-length: 5.72em;
+  --top-offset: 130.28vh;
+  --fall-duration: 9.146s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(55) {
+  --star-tail-length: 5.72em;
+  --top-offset: 120.28vh;
+  --fall-duration: 10.116s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(56) {
+  --star-tail-length: 5.72em;
+  --top-offset: 115.28vh;
+  --fall-duration: 11.902s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(57) {
+  --star-tail-length: 5.72em;
+  --top-offset: 110.28vh;
+  --fall-duration: 8.087s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(58) {
+  --star-tail-length: 5.72em;
+  --top-offset: 100.28vh;
+  --fall-duration: 9.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(59) {
+  --star-tail-length: 5.72em;
+  --top-offset: 120.28vh;
+  --fall-duration: 10.116s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(60) {
+  --star-tail-length: 5.72em;
+  --top-offset: 119.30vh;
+  --fall-duration: 12.902s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(61) {
+  --star-tail-length: 5.72em;
+  --top-offset: 117.50vh;
+  --fall-duration: 8.087s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(61) {
+  --star-tail-length: 5.72em;
+  --top-offset: 118.40vh;
+  --fall-duration: 9.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(62) {
+  --star-tail-length: 6.72em;
+  --top-offset: 1.40vh;
+  --fall-duration: 5.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(63) {
+  --star-tail-length: 7.72em;
+  --top-offset: -4.10vh;
+  --fall-duration: 8.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(64) {
+  --star-tail-length: 10.72em;
+  --top-offset: -6.50vh;
+  --fall-duration: 7.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(65) {
+  --star-tail-length: 6.72em;
+  --top-offset: -8.40vh;
+  --fall-duration: 12.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(66) {
+  --star-tail-length: 7.72em;
+  --top-offset: -10.30vh;
+  --fall-duration: 6.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(67) {
+  --star-tail-length: 10.72em;
+  --top-offset: -12.50vh;
+  --fall-duration: 8.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(68) {
+  --star-tail-length: 8.72em;
+  --top-offset: -14.50vh;
+  --fall-duration: 9.57s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(69) {
+  --star-tail-length: 10.72em;
+  --top-offset: -16.50vh;
+  --fall-duration: 10.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(70) {
+  --star-tail-length: 9.72em;
+  --top-offset: -18.50vh;
+  --fall-duration: 9.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(71) {
+  --star-tail-length: 7.72em;
+  --top-offset: -20.50vh;
+  --fall-duration: 7.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(72) {
+  --star-tail-length: 5.72em;
+  --top-offset: -22.50vh;
+  --fall-duration: 5.76s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(73) {
+  --star-tail-length: 8.512em;
+  --top-offset: -90.40vh;
+  --fall-duration: 7.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(74) {
+  --star-tail-length: 10.100em;
+  --top-offset: -88.30vh;
+  --fall-duration: 5.10s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(75) {
+  --star-tail-length: 4.100em;
+  --top-offset: -86.10vh;
+  --fall-duration: 8.1s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(76) {
+  --star-tail-length: 5.172em;
+  --top-offset: -84.60vh;
+  --fall-duration: 9.5s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(77) {
+  --star-tail-length: 6.182em;
+  --top-offset: -82.20vh;
+  --fall-duration: 6.6s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(78) {
+  --star-tail-length: 9.142em;
+  --top-offset: -80.30vh;
+  --fall-duration: 10.57s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(79) {
+  --star-tail-length: 9.132em;
+  --top-offset: -75.50vh;
+  --fall-duration: 11.576s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(80) {
+  --star-tail-length: 13.72em;
+  --top-offset: -70.40vh;
+  --fall-duration: 12.6s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(81) {
+  --star-tail-length: 14.72em;
+  --top-offset: -60.10vh;
+  --fall-duration: 6.561s;
+  --fall-delay: 0.219s;
+}
+.star:nth-child(82) {
+  --star-tail-length: 15.72em;
+  --top-offset: -50.10vh;
+  --fall-duration: 4.5s;
+  --fall-delay: 0.219s;
+}
 .star::before, .star::after {
   position: absolute;
   content: "";
@@ -580,6 +765,197 @@ span {
 .star::after {
   transform: rotate(-45deg);
 }
+/*Footer Animation*/
+@-webkit-keyframes 
+one { from {
+-webkit-box-shadow: 0 0 250px 20px #473C78;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #F72A3B; }
+}
+@-moz-keyframes 
+one { from {
+-moz-box-shadow: 0 0 250px 20px #473C78;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #F72A3B; }
+}
+@-o-keyframes 
+one { from {
+-o-box-shadow: 0 0 250px 20px #473C78;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #F72A3B; }
+}
+
+@keyframes 
+one { from {
+box-shadow: 0 0 250px 20px #473C78;
+}
+
+to {box-shadow: 0 0 100px 15px #F72A3B; }
+}
+
+#two
+{
+	width: 90%;
+	/*animation*/
+	-webkit-animation: two 4s ease-in-out infinite alternate;
+	-moz-animation: two 4s ease-in-out infinite alternate;
+	-ms-animation: two 4s ease-in-out infinite alternate;
+	-o-animation: two 4s ease-in-out infinite alternate;
+	animation: two 4s ease-in-out infinite alternate;
+}
+@-webkit-keyframes 
+two { from {
+-webkit-box-shadow: 0 0 250px 20px #18C499;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #D8F05E; }
+}
+@-moz-keyframes 
+two { from {
+-moz-box-shadow: 0 0 250px 20px #18C499;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #D8F05E; }
+}
+@-o-keyframes 
+two { from {
+-o-box-shadow: 0 0 250px 20px #18C499;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #D8F05E; }
+}
+
+@keyframes 
+two { from {
+box-shadow: 0 0 250px 20px #18C499;
+}
+
+to { box-shadow: 0 0 100px 15px #D8F05E; }
+}
+
+#three
+{
+	width: 80%;
+	/*animation*/
+	-webkit-animation: three 3s ease-in-out infinite alternate;
+	-moz-animation: three 3s ease-in-out infinite alternate;
+	-ms-animation: three 3s ease-in-out infinite alternate;
+	-o-animation: three 3s ease-in-out infinite alternate;
+	animation: three 3s ease-in-out infinite alternate;
+}
+@-webkit-keyframes 
+three { from {
+-webkit-box-shadow: 0 0 250px 20px #FFDD00;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #3E33FF; }
+}
+@-moz-keyframes 
+three { from {
+-moz-box-shadow: 0 0 250px 20px #FFDD00;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #3E33FF }
+}
+@-o-keyframes 
+three { from {
+-o-box-shadow: 0 0 250px 20px #FFDD00;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #3E33FF }
+}
+
+@keyframes 
+three { from {
+box-shadow: 0 0 250px 20px #FFDD00;
+}
+
+to { box-shadow: 0 0 100px 15px #3E33FF }
+}
+
+#four
+{
+	width: 70%;
+	/*animation*/
+	-webkit-animation: four 2s ease-in-out infinite alternate;
+	-moz-animation: four 2s ease-in-out infinite alternate;
+	-ms-animation: four 2s ease-in-out infinite alternate;
+	-o-animation: four 2s ease-in-out infinite alternate;
+	animation: four 2s ease-in-out infinite alternate;
+}
+@-webkit-keyframes 
+four { from {
+-webkit-box-shadow: 0 0 250px 20px #781848;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #F2BBE9; }
+}
+@-moz-keyframes 
+four { from {
+-moz-box-shadow: 0 0 250px 20px #781848;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #F2BBE9; }
+}
+@-o-keyframes 
+four { from {
+-o-box-shadow: 0 0 250px 20px #781848;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #F2BBE9; }
+}
+
+@keyframes 
+four { from {
+shadow: 0 0 250px 20px #781848;
+}
+
+to { shadow: 0 0 100px 15px #F2BBE9; }
+}
+
+#five
+{
+	width: 60%;
+	/*animation*/
+	-webkit-animation: five 1s ease-in-out infinite alternate;
+	-moz-animation: five 1s ease-in-out infinite alternate;
+	-ms-animation: five 1s ease-in-out infinite alternate;
+	-o-animation: five 1s ease-in-out infinite alternate;
+	animation: five 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes 
+five { from {
+-webkit-box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #F4F6AD; }
+}
+@-moz-keyframes 
+five { from {
+-moz-box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #F4F6AD; }
+}
+@-o-keyframes 
+five { from {
+-o-box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #F4F6AD; }
+}
+
+@keyframes 
+five { from {
+box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { box-shadow: 0 0 100px 15px #F4F6AD; }
+}
+/*Footer Animation*/
 /*Star Animation*/
 @keyframes fall {
   to {
@@ -831,6 +1207,56 @@ span {
           <div class="star"></div>
           <div class="star"></div>
           <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
         </div>
+        <!-- Footer Object -->
+        <article id="wrap">
+          <article id="lightings">
+              <section id="one">
+                    <section id="two">
+                        <section id="three">
+                            <section id="four">
+                                <section id="five">
+                                    
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+            </section>
+            </article>
+          </article>
 </body>
 </html>

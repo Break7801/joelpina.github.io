@@ -1,0 +1,124 @@
+body{
+    background: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .1em
+  }
+  
+  p{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    animation: flap 1s infinite ease-in-out;
+  }
+  
+  a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  a::after{
+    content: "";
+    background: white;
+      mix-blend-mode: exclusion;
+    width: calc(100% + 20px);
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: -10px;
+      transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  
+  a:hover::after{
+      height: calc(100% + 8px)
+  }
+  
+  /* The End */
+  
+  .note{
+    top: auto;
+    bottom: 0;
+    color: #ddd;
+    font-size: 13px;
+    text-transform: none;
+    font-weight: 300;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /*Indicador*/
+
+  body .indicator {
+    position: absolute;
+    top: 15%;
+    left: 48.5%;
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+  }
+  body .indicator span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    animation: animate 1s linear infinite;
+  }
+  body .indicator span:nth-child(1) {
+    top: -30px;
+    left: -30px;
+    animation-delay: 0s;
+  }
+  body .indicator span:nth-child(2) {
+    top: -15px;
+    left: -15px;
+    animation-delay: 0.2s;
+  }
+  body .indicator span:nth-child(3) {
+    top: 0;
+    left: 0;
+    animation-delay: 0.4s;
+  }
+  body .indicator span:nth-child(4) {
+    top: 15px;
+    left: 15px;
+    animation-delay: 0.6s;
+  }
+  body .indicator span:nth-child(5) {
+    top: 30px;
+    left: 30px;
+    animation-delay: 0.8s;
+  }
+  @keyframes animate {
+    0% {
+      border-color: #fff;
+      transform: translate(0, 0);
+    }
+    20% {
+      border-color: #fff;
+      transform: translate(15px, 15px);
+    }
+    20.1%,
+    100% {
+      border-color: #ffd64a;
+    }
+  }
+  @keyframes flap {
+    0%, 100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(5deg);
+    }
+}

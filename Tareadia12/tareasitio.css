@@ -1,13 +1,13 @@
-* {
+/* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+} */
 
 html, body {
-  height: 100%;
-  
+  height: auto;
+  width: auto;
 }
 body {
   display: flex;
@@ -27,6 +27,7 @@ body {
     gap: 100px 50px;
     padding: 100px 50px;
     flex-grow: 1; /* El contenido principal ocupa el espacio disponible */
+    flex-direction: row; /* Ordena los elementos en fila */
 }
 
 .contenedor .cartas {
@@ -35,12 +36,13 @@ body {
     justify-content: center;
     align-items: flex-start;
     width: 350px;
-    max-width: 100%;
-    height: 300px;
+    max-width: 350px; /* Permite que se ajuste hasta este tamaño en pantallas más grandes */
+    height: auto; /* Deja que la altura se ajuste automáticamente */
     background: white;
     border-radius: 20px;
     transition: 0.5s;
     box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    padding: 20px;
 }
 
 .contenedor .cartas:hover {
@@ -69,14 +71,14 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
 .contenedor .cartas .contenido {
     position: absolute;
     top: 252px;
-    width: 100%;
+    width: 20em;
     height: 35px;
     padding: 0px;
     text-align: center;
@@ -116,24 +118,64 @@ body {
     color: aqua;
 }
 
+/* Para pantallas más pequeñas, ajusta el layout de las cartas */
+@media (max-width: 768px) {
+  .contenedor {
+      flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+      padding: 20px;
+      flex: 1 1 45%; /* Cada imagen ocupará un 45% del contenedor en pantallas medianas */
+  }
+  body {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 480px) {
-    .contenedor .cartas {
-        width: 230px;
-        border-radius: 15px;
-    }
+  .contenedor {
+    flex: 1 1 100%; /* Cada imagen ocupará el 100% del contenedor en pantallas pequeñas */
+  }
+  .contenedor .cartas {
+      width: 90%; /* Ocupa más del espacio disponible en pantallas pequeñas */
+      margin: 10px auto; /* Centra las cartas */
+  }
 
-    .contenedor .cartas .caja-img {
-        width: 185;
-        border-radius: 10px;
-    }
+  .contenedor .cartas .contenido h2 {
+      font-size: 1.2rem; /* Ajusta el tamaño del texto */
+  }
 
-    .contenedor .cartas .contenido p {
-        font-size: 0.8rem;
-    }
+  .contenedor .cartas .contenido p {
+      font-size: 0.9rem;
+  }
 
-    .contenedor .cartas .contenido a {
-        font-size: 0.9rem;
-    }
+  .contenedor .cartas .contenido a {
+      font-size: 0.8rem;
+  }
+}
+
+/* Ajuste para el encabezado neon */
+
+#neon{
+  position: fixed;
+  margin:auto;
+  left: 25%; /* Centra el texto en pantallas más pequeñas */
+  top: 150px; /* Baja un poco el texto */
+  height:1vh;
+  line-height:1vh;
+  text-align:center;
+  flex-direction: row; /* Ordena los elementos en fila */
+  font-size: 15vh; /* Ajusta el tamaño del texto según el alto de la pantalla */
+  font-family:neon;
+  color:white;
+  text-shadow: 0 0 .5vh var(--lights), 0 0 .5vh var(--lights), 0 0 .5vh var(--lights), 0 0 .5vh var(--lights), 0 0 1vh var(--lights);
+  animation: flicker 7s infinite;
+  filter:brightness(1);
+}
+
+@media (max-width: 480px) {
+  #neon {
+      font-size: 10vh; /* Disminuye el tamaño en móviles */
+      left: 5%;
+  }
 }
 
 @font-face{
@@ -141,21 +183,6 @@ body {
   src: url(https://dl.dropbox.com/s/df4zz9y6lmhocr9/England.otf?dl=0)
 }
 
-#neon{
-  position:absolute;
-  margin:auto;
-  top: 100px;
-  left: 350px;;
-  height:1vh;
-  line-height:1vh;
-  text-align:center;
-  font-size:20vh;
-  font-family:neon;
-  color:white;
-  text-shadow: 0 0 .5vh var(--lights), 0 0 .5vh var(--lights), 0 0 .5vh var(--lights), 0 0 .5vh var(--lights), 0 0 1vh var(--lights);
-  animation: flicker 7s infinite;
-  filter:brightness(1);
-}
 
 @keyframes flicker{
   9%{
@@ -202,12 +229,12 @@ body {
   padding:40px 0;
   /* background-color:#ffffff; */
   color:#000000;
-  bottom: 10%;
-  width: 100%;
-  position: absolute;
+  bottom: 10rem;
+  width: 125rem;
+  position: fixed;
   text-align: center;
-  left: 0%;
-  top: 85%;
+  left: 0px;
+  top: 45rem;
 }
 
 .footer-basic ul {
@@ -245,7 +272,7 @@ body {
   line-height:40px;
   display:inline-block;
   text-align:center;
-  border-radius:50%;
+  border-radius:50px;
   border:1px solid #ccc;
   margin:0 8px;
   color:inherit;
@@ -262,4 +289,100 @@ body {
   font-size:13px;
   color:#aaa;
   margin-bottom:0;
+}
+
+@media (max-width: 480px) {
+  .footer-basic ul {
+      font-size: 14px;
+  }
+}
+
+/* (320x480) iPhone (Original, 3G, 3GS) */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* insert styles here */
+}
+
+/* (320x480) Smartphone, Portrait */
+@media only screen and (device-width: 320px) and (orientation: portrait) {
+  /* insert styles here */
+}
+
+/* (320x480) Smartphone, Landscape */
+@media only screen and (device-width: 480px) and (orientation: landscape) {
+  /* insert styles here */
+}
+
+/* (480x800) Android */
+@media only screen and (min-device-width: 480px) and (max-device-width: 800px) {
+  /* insert styles here */
+}
+
+/* (640x960) iPhone 4 & 4S */
+@media only screen and (min-device-width: 640px) and (max-device-width: 960px) {
+  /* insert styles here */
+}
+
+/* (720x1280) Galaxy Nexus, WXGA */
+@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
+  /* insert styles here */
+}
+
+/* (720x1280) Galaxy Nexus, Landscape */
+@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) and (orientation: landscape) {
+  /* insert styles here */
+}
+
+/* (1024x768) iPad 1 & 2, XGA */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* insert styles here */
+}
+
+/* (768x1024) iPad 1 & 2, Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* insert styles here */
+}
+
+/* (1024x768) iPad 1 & 2, Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* insert styles here */
+}
+
+/* (2048x1536) iPad 3 */
+@media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) {
+  /* insert styles here */
+}
+
+/* (1280x720) Galaxy Note 2, WXGA */
+@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
+  /* insert styles here */
+}
+
+/* (1366x768) WXGA Display */
+@media  screen and (max-width: 1366px) {
+  /* insert styles here */
+}
+
+/* (1280x1024) SXGA Display */
+@media  screen and (max-width: 1280px) {
+  /* insert styles here */
+}
+
+/* (1440x900) WXGA+ Display */
+@media  screen and (max-width: 1440px) {
+  /* insert styles here */
+}
+
+/* (1680x1050) WSXGA+ Display */
+@media  screen and (max-width: 1680px) {
+  /* insert styles here */
+}
+
+/* (1920x1080) Full HD Display */
+@media  screen and (max-width: 1920px) {
+  /* insert styles here */
+}
+
+/* (1600x900) HD+ Display */
+@media  screen and (max-width: 1600px) {
+  /* insert styles here */
 }

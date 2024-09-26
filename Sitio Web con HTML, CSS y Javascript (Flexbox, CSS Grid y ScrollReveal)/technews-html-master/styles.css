@@ -57,7 +57,7 @@ ul {
 }
 
 .nav-main ul li a:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000000;
 }
 
 .nav-main ul.nav-menu {
@@ -100,7 +100,10 @@ hr {
 .showcase {
   width: 100%;
   height: 550px;
-  background: url("./img/showcase2.jpg") no-repeat center center/cover;
+  background: url("https://break7801.github.io/joelpina.github.io/Sitio%20Web%20con%20HTML,%20CSS%20y%20Javascript%20(Flexbox,%20CSS%20Grid%20y%20ScrollReveal)/technews-html-master/img/front-view-password-wi.jpg") no-repeat center center/cover;
+  /*Redimencionando imagen*/
+  image-rendering: optimizeQuality;
+  /*Redimencionando imagen*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,6 +112,7 @@ hr {
   padding-bottom: 50px;
   margin-bottom: 20px;
   color: #fff;
+  transition: transform 0.3s ease-in-out;
 }
 
 .showcase h2,
@@ -120,12 +124,21 @@ hr {
   margin-top: 20px;
 }
 
+.showcase :hover {
+  transform: scale(1.05);
+}
+
 /* News Cards */
 .news-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
   margin: 70px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.news-cards :hover {
+  transform: scale(1.05);
 }
 
 .news-cards img {
@@ -140,7 +153,7 @@ hr {
 
 .news-cards a {
   padding: 10px 0;
-  color: #f2f2f2;
+  color: #000000;
   text-transform: uppercase;
   display: inline-block;
   font-weight: bold;
@@ -150,7 +163,7 @@ hr {
 .cards-banner-one {
   width: 100%;
   height: 350px;
-  background: url("./img/tech-red.jpg");
+  background: url("https://break7801.github.io/joelpina.github.io/Sitio%20Web%20con%20HTML,%20CSS%20y%20Javascript%20(Flexbox,%20CSS%20Grid%20y%20ScrollReveal)/technews-html-master/img/abstract-futuristic-background-with-3d-design.jpg");
   margin-bottom: 40px;
 }
 
@@ -169,12 +182,13 @@ hr {
 .cards-banner-two {
   width: 100%;
   height: 350px;
-  background: url("./img/image-five.jpg") no-repeat center center/cover;
+  background: url("https://break7801.github.io/joelpina.github.io/Sitio%20Web%20con%20HTML,%20CSS%20y%20Javascript%20(Flexbox,%20CSS%20Grid%20y%20ScrollReveal)/technews-html-master/img/abstract-futuristic-background-with-3d-design.jpg") no-repeat center center/cover;
 }
 
 .cards-banner-two .content {
   width: 50%;
   padding: 100px 0 0 30px;
+  color: #fff;
 }
 
 /* Follow */

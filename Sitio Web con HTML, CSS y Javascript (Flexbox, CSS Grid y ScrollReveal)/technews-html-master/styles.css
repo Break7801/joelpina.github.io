@@ -144,6 +144,7 @@ hr {
 .news-cards img {
   width: 100%;
   height: 180px;
+  image-rendering: optimizeQuality;
 }
 
 .news-cards h3 {
@@ -165,6 +166,7 @@ hr {
   height: 350px;
   background: url("https://break7801.github.io/joelpina.github.io/Sitio%20Web%20con%20HTML,%20CSS%20y%20Javascript%20(Flexbox,%20CSS%20Grid%20y%20ScrollReveal)/technews-html-master/img/abstract-futuristic-background-with-3d-design.jpg");
   margin-bottom: 40px;
+  image-rendering: optimizeQuality;
 }
 
 .cards-banner-one .content {
@@ -183,6 +185,7 @@ hr {
   width: 100%;
   height: 350px;
   background: url("https://break7801.github.io/joelpina.github.io/Sitio%20Web%20con%20HTML,%20CSS%20y%20Javascript%20(Flexbox,%20CSS%20Grid%20y%20ScrollReveal)/technews-html-master/img/abstract-futuristic-background-with-3d-design.jpg") no-repeat center center/cover;
+  image-rendering: optimizeQuality;
 }
 
 .cards-banner-two .content {

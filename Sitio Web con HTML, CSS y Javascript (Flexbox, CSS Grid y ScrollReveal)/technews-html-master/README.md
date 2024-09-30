@@ -1,5 +1,5 @@
 # Tech News HTML
-![](./screenshot.png)
+![](./ScreenTndG.png)
 
 # Recomendations
 * Minimize the size of Images
